@@ -35,7 +35,7 @@ router.route('/register')
 router.route('/login')
   .get(sessionsController.new)
   .post(sessionsController.create);
-router.route('logout')
+router.route('/logout')
   .get(sessionsController.delete);
 
 module.exports = router;

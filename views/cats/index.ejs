@@ -6,7 +6,9 @@
   <% cats.forEach((cat) => { %>
     <div class="col-md-4">
       <div class="card">
-        <div class="card-img-top" style="background-image:url(<%= cat.image %>)" alt="<%= cat.name %>"></div>
+        <a href="/cats/<%= cat.id %>">
+          <img class="img-fluid" src="<%= cat.image %>" alt="<%= cat.name %>" >
+        </a>
         <div class="card-block">
           <a href="/cats/<%= cat.id %>">
             <h4 class="card-title"><%= cat.name %></h4>

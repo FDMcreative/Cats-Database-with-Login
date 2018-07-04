@@ -21,7 +21,7 @@ function sessionsCreate(req,res,next) {
 }
 //regenerate session to logout
 function sessionsDelete(req,res) {
-  req.session.regenerate( () => res.redirect('/'));
+  req.session.regenerate(() => res.redirect('/'));
 }
 
 module.exports = {
