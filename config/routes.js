@@ -19,15 +19,15 @@ router.get('/', (req,res) => res.render('static/index'));
 //concise mode
 router.route('/cats')
   .get(cats.index)
-  .post(cats.create);
+  .post(secureRoute, cats.create);
 router.route('/cats/new')
-  .get(cats.new);
+  .get(secureRoute, cats.new);
 router.route('/cats/:id')
   .get(cats.show)
-  .put(cats.update)
-  .delete(cats.delete);
+  .put(secureRoute, cats.update)
+  .delete(secureRoute, cats.delete);
 router.route('/cats/:id/edit')
-  .get(cats.edit);
+  .get(secureRoute, cats.edit);
 
 router.route('/register')
   .get(registrationsController.new)

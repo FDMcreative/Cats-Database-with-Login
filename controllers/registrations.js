@@ -1,10 +1,10 @@
-const User= require('../models/user');
+const User = require('../models/user');
 
-function newRoute(req,res) {
+function registrationNew(req,res) {
   res.render('registrations/new');
 }
 
-function createRoute(req,res) {
+function registrationCreate(req,res) {
   User
     .create(req.body)
     .then((user) => {
@@ -19,6 +19,6 @@ function createRoute(req,res) {
 }
 
 module.exports = {
-  new: newRoute,
-  create: createRoute
+  new: registrationNew,
+  create: registrationCreate
 };

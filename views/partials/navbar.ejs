@@ -12,16 +12,10 @@
         </li>
 
         <% if(locals.isAuthenticated) { %>
-          <li>
-            <a class="nav-link" href="#">You are In</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
           </li>
         <% } else { %>
-          <li>
-            <a class="nav-link" href="#">You are Out</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="/login">Log In</a>
           </li>
