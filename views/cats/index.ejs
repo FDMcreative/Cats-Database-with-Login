@@ -1,0 +1,25 @@
+<h1>Cats</h1>
+
+<a href="/cats/new" class="btn btn-primary">Add</a>
+
+<div class="row">
+  <% cats.forEach((cat) => { %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-img-top" style="background-image:url(<%= cat.image %>)" alt="<%= cat.name %>"></div>
+        <div class="card-block">
+          <a href="/cats/<%= cat.id %>">
+            <h4 class="card-title"><%= cat.name %></h4>
+          </a>
+          <p class="card-text"><%= cat.age %></p>
+
+          <a href="/cats/<%= cat.id %>/edit" class="btn btn-primary">Edit</a>
+          <form method="POST" action="/cats/<%= cat.id %>">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>

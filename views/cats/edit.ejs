@@ -1,0 +1,23 @@
+<h1>Edit Cat</h1>
+
+<form method="POST" action="/cats/<%= cat.id %>">
+  <input type="hidden" name="_method" value="PUT">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" class="form-control" value="<%= cat.name %>">
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="text" name="age" id="age" class="form-control" value="<%= cat.age %>">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea name="description" id="description" class="form-control"><%= cat.description %></textarea>
+  </div>
+  <div class="form-group">
+    <label>Image</label>
+    <input type="text" name="image" class="form-control" value="<%= cat.image %>">
+  </div>
+
+  <button class="btn btn-primary">Add</button>
+</form>
