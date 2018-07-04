@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cats Database with Login</title>
+
+    <% include ./partials/stylesheets %>
+
+  </head>
+
+  <body>
+
+    <header>
+      <% include ./partials/navbar %>
+    </header>
+
+    <main class="container">
+      <% for(const type in messages) { %>
+        <p class="flash <%= type %>"><%= messages[type] %></p>
+      <% } %>
+      <%- body %>
+    </main>
+
+    <% include ./partials/script %>
+
+  </body>
+</html>

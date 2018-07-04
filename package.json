@@ -1,0 +1,24 @@
+{
+  "name": "cats-database-with-login",
+  "version": "1.0.0",
+  "description": "a database of cats with a login function",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Federico Del Monte (https://github.com/FDMcreative)",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-ejs-layouts": "^2.4.0",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.2.0",
+    "morgan": "^1.9.0"
+  }
+}
