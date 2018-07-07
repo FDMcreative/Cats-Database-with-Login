@@ -18,3 +18,4 @@ A map is also implemented.
 Difficulties:
 
 - Switch to Leafletjs maps since Google Maps is on payment.
+- The database inexplicably  gets an undefined environment, unless explicitly set in config, because, the fallback option doesn't get read.
