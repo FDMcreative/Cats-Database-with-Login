@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
-  username: {type: String},
-  email: {type: String},
+  username: { type: String, required: true },
+  email: String,
   password: { type: String, required: true }
 });
 
-// this is virtual as we dont want to save it on the database but we do want to save it temporarily so that we can check it against the password
+// this is virtual as we don't want to save it on the database but we do want to save it temporarily so that we can check it against the password
 userSchema
   .virtual('passwordConfirmation')
   .set(function setPasswordConfirmation(passwordConfirmation) {
@@ -16,7 +16,6 @@ userSchema
 
 // this is a lifecycle hook which is mongoose middleware
 // the .pre('validate') means this will run before it runs the validation above
-
 userSchema.pre('validate', function checkPassword(next) {
   if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
     this.invalidate('passwordConfirmation', 'does not match');

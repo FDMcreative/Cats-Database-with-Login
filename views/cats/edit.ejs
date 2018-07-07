@@ -4,19 +4,21 @@
   <input type="hidden" name="_method" value="PUT">
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" class="form-control" value="<%= cat.name %>">
+    <input type="text" name="name" id="name" class="form-control" value="<%= cat.name %>" required>
   </div>
   <div class="form-group">
     <label for="age">Age</label>
-    <input type="text" name="age" id="age" class="form-control" value="<%= cat.age %>">
+    <input type="text" name="age" id="age" class="form-control" value="<%= cat.age %>" required>
   </div>
   <div class="form-group">
     <label for="description">Description</label>
-    <textarea name="description" id="description" class="form-control"><%= cat.description %></textarea>
+    <textarea name="description" id="description" class="form-control" required max-length="255"><%= cat.description %></textarea>
   </div>
   <div class="form-group">
-    <label>Image</label>
-    <input type="text" name="image" class="form-control" value="<%= cat.image %>">
+    <label>Images</label>
+    <input type="text" name="images[]" class="form-control" value="<%= cat.images[0] %>">
+    <input type="text" name="images[]" class="form-control" value="<%= cat.images[1] %>">
+    <input type="text" name="images[]" class="form-control" value="<%= cat.images[2] %>">
   </div>
 
   <button class="btn btn-primary">Add</button>
