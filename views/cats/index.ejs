@@ -5,6 +5,7 @@
 <% } %>
 
 <div class="row">
+
   <% cats.forEach((cat) => { %>
     <div class="col-md-4">
       <div class="card">
@@ -16,14 +17,19 @@
           <p class="card-text"><%= cat.age %></p>
 
           <% if(locals.isAuthenticated) { %>
+
             <a href="/cats/<%= cat.id %>/edit" class="btn btn-primary">Edit</a>
+
             <form method="POST" action="/cats/<%= cat.id %>">
               <input type="hidden" name="_method" value="DELETE">
               <button class="btn btn-danger">Delete</button>
             </form>
+
           <% } %>
+
         </div>
       </div>
     </div>
   <% }) %>
+  
 </div>
